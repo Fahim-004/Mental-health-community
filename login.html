@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.containers {
+    background: #fff;
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.signup-form {
+    text-align: center;
+}
+
+.signup-form h2 {
+    margin-bottom: 1em;
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 1em;
+    text-align: left;
+    font-size: 25px;
+    padding: 10px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 1em;
+    color: #555;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.input-group input:focus {
+    border-color: #007bff;
+    outline: none;
+    font-size: 27px;
+}
+
+button {
+    width: 100%;
+    padding: 1em;
+    border: none;
+    border-radius: 4px;
+    background: #007bff;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+p {
+    margin-top: 1em;
+    color: #777;
+}
+
+p a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+.login {
+    margin: 0px;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('image/bg.jpg');
+    background-size: cover;
+}
+.bg {
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin:5px;
+    width: 600px;
+    height: 550px
+}
+h2 {
+    font-size: 50px;
+    padding: 10px;
+}
+.submit{
+    font-size: 35px;
+    padding: 25px;
+
+}
+    </style>
+</head>
+<body>
+    <div class="bg">
+        <div class="container">
+            <div class="login">
+                <h2>Login</h2>
+                <form onsubmit="return validateForm()" action="/submit-login" method="POST">
+                    <div class="input-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button class="submit">Log In</button>
+                </form>
+                <!--<p>Don't have an account? <a href="/signup">Sign Up</a></p>-->
+            </div>
+        </div>
+    </div>
+    <script>
+        function validateForm(event) {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    if ((username === "karthik" || username === "fahim") && password === "1234") {
+        // Credentials are correct, redirect to the next page
+        window.location.href = "main.html";
+        event.preventDefault(); // Prevent form submission
+    } else {
+        // Credentials are invalid, prevent form submission
+        alert("Invalid username or password");
+        event.preventDefault(); // Prevent form submission
+    }
+}
+    </script>
+</body>
+</html>
